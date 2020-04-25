@@ -1,4 +1,4 @@
-package com.hobbang;
+package com.hobbang.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;

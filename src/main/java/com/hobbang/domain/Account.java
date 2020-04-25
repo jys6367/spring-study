@@ -1,4 +1,4 @@
-package com.hobbang;
+package com.hobbang.domain;
 
 import lombok.*;
 

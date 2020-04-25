@@ -1,6 +1,6 @@
 package com.hobbang.account;
 
-import com.hobbang.Account;
+import com.hobbang.domain.Account;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,6 +77,9 @@ class AccountControllerTest {
 
         // db에 저장됬나
         assertTrue(accountRepository.existsByEmail(inputEmail));
+
+        // email token이 저장됬나
+        assertNotNull(account.getEmailCheckToken());
 
         // 메일 발송됬나
         then(javaMailSender).should().send(any(SimpleMailMessage.class));
