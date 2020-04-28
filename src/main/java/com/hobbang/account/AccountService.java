@@ -93,8 +93,12 @@ public class AccountService implements UserDetailsService {
         account.setOccupation(profile.getOccupation());
         account.setLocation(profile.getLocation());
         account.setBio(profile.getBio());
-        //todo 프로필 이미지
+        account.setProfileImage(profile.getProfileImage());
         accountRepository.save(account);
-        // todo 문제가 남음
+    }
+
+    public void updatePassword(Account account, String newPassword) {
+        account.setPassword(passwordEncoder.encode(newPassword));
+        accountRepository.save(account);
     }
 }
